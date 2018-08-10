@@ -3,5 +3,10 @@
 {% block title %} {{ title }}!{% endblock %}
 
 {% block body %}
-ICI SERA REPRISE LA PREMIERE ETAPE DE LA BILLETTERIE
+    <br>
+    <h1>CREATION DE VOTRE COMMANDE</h1>
+        <h2>Veuillez remplir les informations ci-après :</h2>
+        <br>
+        {{ form(formCommande) }}
+
 {% endblock %}
