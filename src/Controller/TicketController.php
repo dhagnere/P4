@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Commande;
+use App\Form\CommandeType;
 use Doctrine\Common\Persistence\ObjectManager;
 use function Sodium\add;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -54,15 +55,9 @@ class TicketController extends Controller
         dump($request);
         $commande = new Commande();
 
-        $form = $this->createFormBuilder($commande)
-            ->add('mail',EmailType::class, [
-                'attr'=>[
-                    'placeholder'=>'Votre Email']
-            ])
-            ->add('date_visit', DateType::class)
-            ->add('nb_tickets', IntegerType::class)
-            ->add('createdAt', DateType::class)
-            ->getForm();
+        $form = $this->createForm(CommandeType::class, $commande);
+        $form->handleRequest($request);
+
 
         return $this->render('ticket/index.html.twig', [
             'title'=>" Réservation en ligne",
