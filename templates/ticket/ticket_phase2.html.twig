@@ -1,16 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} {{ title }}!{% endblock %}
 
 {% block body %}
     <br>
-    <h1>CREATION DE VOTRE COMMANDE</h1>
+    <h1>CREATION DE VOTRE COMMANDE ETAPE 2</h1>
         <h2>Veuillez remplir les informations ci-après :</h2>
-         <br>
-    {{ form_start(formCommande) }}
-        {{ form_widget(formCommande) }}
+
+            {{  form_start(formBillet) }}
+
+            {{ form_widget(formBillet) }}
+
             <button type="submit" class="btn btn-default" >Etape suivante</button>
-    {{ form_end(formCommande) }}
+
+            {{ form_end(formBillet) }} }}
+
+         <br>
+
 
 {% endblock %}
 
@@ -21,22 +26,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.fr.min.js"> </script>
     {#DatePicker calendar#}
-    <script>
-        $('.datepicker').datepicker({
-            format: "dd/mm/yy",
-            todayBtn: true,
-            clearBtn: true,
-            language: "fr",
-            daysOfWeekDisabled: "0,2",
-            autoclose: true,
-            todayHighlight: true,
-            toggleActive: true
-        });
 
 
-    </script>
-    {#End of datepicker Calendar#}
-    <script>
-        $('.dropdown-toggle').dropdown();
-    </script>
+
+
 {% endblock %}
