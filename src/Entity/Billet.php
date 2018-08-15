@@ -41,6 +41,12 @@ class Billet
      */
     private $discount;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets" ,  cascade={"persist"}))
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $commande_id;
+
     public function getId()
     {
         return $this->id;
@@ -102,6 +108,18 @@ class Billet
     public function setDiscount(?bool $discount): self
     {
         $this->discount = $discount;
+
+        return $this;
+    }
+
+    public function getCommandeId(): ?Commande
+    {
+        return $this->commande_id;
+    }
+
+    public function setCommandeId(?Commande $commande_id): self
+    {
+        $this->commande_id = $commande_id;
 
         return $this;
     }

@@ -966,54 +966,70 @@
       <DataType>tinyint(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="240" parent="231" name="PRIMARY">
+    <column id="240" parent="231" name="commande_id_id">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="241" parent="231" name="IDX_1F034AF6462C4194">
+      <ColNames>commande_id_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="242" parent="231" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="241" parent="232" name="id">
+    <foreign-key id="243" parent="231" name="FK_1F034AF6462C4194">
+      <ColNames>commande_id_id</ColNames>
+      <RefSchemaName>p4</RefSchemaName>
+      <RefTableName>commande</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="244" parent="232" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="232" name="mail">
+    <column id="245" parent="232" name="mail">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="232" name="date_visit">
+    <column id="246" parent="232" name="date_visit">
       <Position>3</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="232" name="nb_tickets">
+    <column id="247" parent="232" name="nb_tickets">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="232" name="created_at">
+    <column id="248" parent="232" name="created_at">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="246" parent="232" name="PRIMARY">
+    <key id="249" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="247" parent="233" name="version">
+    <column id="250" parent="233" name="version">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="248" parent="233" name="PRIMARY">
+    <key id="251" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>version</ColNames>
       <Primary>1</Primary>

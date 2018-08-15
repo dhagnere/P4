@@ -13,8 +13,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -39,11 +37,8 @@ class BilletType extends AbstractType
             ->add('birthday', DateType::class, [
                 'label' => 'Votre date de naissance :',
                 'widget' => 'single_text',
-                'html5' => false,
-                'format' => 'd/M/y',
-                'attr' => [
-                    'class' => 'datepicker'
-                ]
+                'html5' => true,
+                'format' => 'd/M/y'
             ])
             ->add('country', CountryType::class , [
                 'label'=>'Votre pays de résidence :'

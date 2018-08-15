@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +37,16 @@ class Commande
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Billet", mappedBy="commande_id", orphanRemoval=true)
+     */
+    private $billets;
+
+    public function __construct()
+    {
+        $this->billets = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -85,6 +97,37 @@ class Commande
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Billet[]
+     */
+    public function getBillets(): Collection
+    {
+        return $this->billets;
+    }
+
+    public function addBillet(Billet $billet): self
+    {
+        if (!$this->billets->contains($billet)) {
+            $this->billets[] = $billet;
+            $billet->setCommandeId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBillet(Billet $billet): self
+    {
+        if ($this->billets->contains($billet)) {
+            $this->billets->removeElement($billet);
+            // set the owning side to null (unless already changed)
+            if ($billet->getCommandeId() === $this) {
+                $billet->setCommandeId(null);
+            }
+        }
 
         return $this;
     }

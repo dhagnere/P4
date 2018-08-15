@@ -42,7 +42,7 @@ class CommandeType extends AbstractType
             ->add('nb_tickets', IntegerType::class , [
                 'label'=>'Nombre de tickets désiré :'
             ])
-            ->add('createdAt', DateType::class)
+//            ->add('createdAt', DateType::class)
             ->getForm();
     }
 
