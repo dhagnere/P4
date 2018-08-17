@@ -11,12 +11,13 @@ namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
+use Symfony\Component\Validator\Constraints\Choice;
 
 
 class BilletType extends AbstractType
@@ -43,7 +44,12 @@ class BilletType extends AbstractType
             ->add('country', CountryType::class , [
                 'label'=>'Votre pays de résidence :'
             ])
-            ->add('discount', CheckboxType::class)
+            ->add('discount', ChoiceType::class, array(
+                'label'=>'Votre Discount',
+                'choices' =>array(
+                    'Non'=>false,
+                    'Oui'=>true,
+                )))
             ->getForm();
     }
 

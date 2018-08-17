@@ -39,7 +39,7 @@ class Commande
     private $createdAt;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Billet", mappedBy="commande_id", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Billet", mappedBy="commande_id", cascade={"persist"}, orphanRemoval=true)
      */
     private $billets;
 
