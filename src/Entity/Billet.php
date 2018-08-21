@@ -42,10 +42,9 @@ class Billet
     private $discount;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets" ,  cascade={"persist"}))
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets")
      */
-    private $commande_id;
+    private $commande;
 
     public function getId()
     {

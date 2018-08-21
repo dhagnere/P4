@@ -6,18 +6,11 @@ use App\Entity\Billet;
 use App\Entity\Commande;
 use App\Form\BilletType;
 use App\Form\CommandeType;
-use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\CountryType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 
 class TicketController extends AbstractController
@@ -108,7 +101,6 @@ class TicketController extends AbstractController
     $commande = $session->get("commande");
     $nombre_tickets = $commande->getNbTickets();
 
-
         $form=$this->createFormBuilder();
 
         //creation d'une boucle pour afficher le nombre de billets récupéré dans la commande(formCommande)
@@ -117,16 +109,27 @@ class TicketController extends AbstractController
                 $form->add($i, BilletType::class, [
                     'label'=>"VISITEUR N°".($i+1)])
                     ->getForm();
-        }
+            }
 
         $formBillet=$form->getForm();
         $formBillet->handleRequest($request);
 
+
+
         if ($formBillet->isSubmitted() && $formBillet->isValid()){
 //            (dump($formBillet)); die();
-            $em->persist($billet);
+
+            $billet ->setCommandeId($commande);
+            $data=$formBillet->getData();
+
+            for ($i=0; $i<$nombre_tickets; $i++)
+            {
+             $commande->addBillet($data[$i]);
+            }
+            $em->persist($commande);
             $em->flush();
 
+//            TODO Rediriger vers la commande 3 et faire le service pour tarifs
         }
 
 
