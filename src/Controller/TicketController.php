@@ -67,16 +67,16 @@ class TicketController extends AbstractController
         {
             if($form->isSubmitted() && $form->isValid())
             {
-//  creation de la session order, on y place l'objet order contenu dans $order //
+                //  creation de la session order, on y place l'objet order contenu dans $order //
                 $session->set("commande" , $commande);
-//   On met en place la date de creation de la commande (aujourd'hui)
+                //   On met en place la date de creation de la commande (aujourd'hui)
                 $commande->setCreatedAt(new \DateTime());
-//  on appelle l'EntityManager
+                //  on appelle l'EntityManager
 
                 $em=$this->getDoctrine()->getManager();
                 $em->persist($commande);
-                $em->flush();
-
+//                $em->flush();
+//
                 $this->addFlash('success' , "Etape suivante : Veuillez renseigner chaque ticket.");
 //  on redirect vers la deuxieme phase
                 return $this->redirectToRoute('ticket_phase_2');
@@ -96,7 +96,6 @@ class TicketController extends AbstractController
      * @Route("/ticket2", name="ticket_phase_2")
      * @param Request $request
      * @param EntityManagerInterface $em
-     * @param null $formBillet
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
@@ -110,23 +109,32 @@ class TicketController extends AbstractController
 
 
         $form=$this->createFormBuilder();
-
-        //creation d'une boucle pour afficher le nombre de billets récupéré dans la commande(formCommande)
             for ($i=0; $i<$nombre_tickets; $i++)
             {
                 $form->add($i, BilletType::class, [
                     'label'=>"VISITEUR N°".($i+1)])
                     ->getForm();
-        }
-
-        $formBillet=$form->getForm();
-        $formBillet->handleRequest($request);
+            }
+        $form->getData();
+    $formBillet=$form->getForm();
+    $formBillet->handleRequest($request);
 
         if ($formBillet->isSubmitted() && $formBillet->isValid()){
-//            (dump($formBillet)); die();
-            $em->persist($billet);
+
+            $billet->setCommandeId($commande);
+            $data=$formBillet->getData();
+
+                for ($i=0; $i<$nombre_tickets; $i++)
+                {
+                    $commande->addBillet($data[$i]);
+                }
+            $em->persist($commande);
             $em->flush();
 
+            return $this->render('ticket/ticket_phase3.html.twig', [
+                'billet'=>$billet,
+                'title'=>'Choix du billet',
+            ]);
         }
 
 
