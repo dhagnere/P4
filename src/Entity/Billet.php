@@ -42,7 +42,11 @@ class Billet
     private $discount;
 
     /**
+<<<<<<< HEAD
      * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets")$
+=======
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets" )
+>>>>>>> d344c7da6b90b5549813c108489ecfaa3934984e
      */
     private $commande;
 
@@ -113,12 +117,12 @@ class Billet
 
     public function getCommandeId(): ?Commande
     {
-        return $this->commande_id;
+        return $this->commande;
     }
 
-    public function setCommandeId(?Commande $commande_id): self
+    public function setCommandeId(?Commande $commande): self
     {
-        $this->commande_id = $commande_id;
+        $this->commande = $commande;
 
         return $this;
     }
