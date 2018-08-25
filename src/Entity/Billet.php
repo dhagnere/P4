@@ -37,12 +37,12 @@ class Billet
     private $country;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="boolean", nullable=false)
      */
     private $discount;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets")$
      */
     private $commande;
 
