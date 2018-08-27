@@ -42,12 +42,8 @@ class Billet
     private $discount;
 
     /**
-<<<<<<< HEAD
      * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets")$
-=======
-     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets" )
->>>>>>> d344c7da6b90b5549813c108489ecfaa3934984e
-     */
+    */
     private $commande;
 
     public function getId()

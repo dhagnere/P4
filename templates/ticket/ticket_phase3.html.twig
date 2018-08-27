@@ -2,21 +2,39 @@
 
 
 {% block body %}
-    {{ dump() }}
     <br>
-    <h1>CREATION DE VOTRE COMMANDE ETAPE 2</h1>
-        <h2>Veuillez remplir les informations ci-après :</h2>
+    <h1>RESUME DE VOTRE COMMANDE</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-offset-3 col-lg-5 ">
+                <div class="col-lg-offset-1 col-lg-6">
+                {#{% if nbTickets > 0 %}#}
+                    <table  class="table-responsive">
+                        <th>VOTRE PANIER</th>
 
-            {#{{  form_start(formBillet) }}#}
-                {#{{ form_errors(formBillet) }}#}
-                {#{{ form_widget(formBillet) }}#}
-                {#<button type="submit" class="btn btn-default" >Etape suivante</button>#}
-            {#{{ form_end(formBillet) }}#}
+                            <tr>
+                                <td>
+                                    {{ id}}
+                                </td>
+                                <td>
+                                    {{ commande.mail}}
+                                </td>
+                                <td>
+                                    {{ commande.billets.name}}
+                                </td>
+                                {#<td> {{ billet.name }} </td>#}
+                            </tr>
 
-         <br>
-    {{ dump() }}
-
-{% endblock %}
+                    </table>
+                    <br/>
+                    {#<a href="{{ path('prepare_stripe') }}">Valider le panier</a>#}
+                {#{% else %}#}
+                    {#<tr><td>Votre panier est vide</td></tr>#}
+                {#{% endif %}#}
+            </div>
+        </div>
+    </div>
+{%  endblock %}
 
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -36,11 +54,4 @@
             todayHighlight: true,
             toggleActive: true
         });
-
-
-    </script>
-    {#End of datepicker Calendar#}
-    <script>
-        $('.dropdown-toggle').dropdown();
-    </script>
 {% endblock %}

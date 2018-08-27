@@ -6,9 +6,8 @@ use App\Entity\Billet;
 use App\Entity\Commande;
 use App\Form\BilletType;
 use App\Form\CommandeType;
+use App\Service\CheckPrice;
 use Doctrine\ORM\EntityManagerInterface;
-use phpDocumentor\Reflection\DocBlock\Tags\Reference\Url;
-use function Sodium\crypto_box_publickey_from_secretkey;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -109,20 +108,18 @@ class TicketController extends AbstractController
                     'label'=>"VISITEUR N°".($i+1)])
                     ->getForm();
             }
-<<<<<<< HEAD
+
 
         $formBillet=$form->getForm();
         $formBillet->handleRequest($request);
-=======
         $form->getData();
     $formBillet=$form->getForm();
     $formBillet->handleRequest($request);
->>>>>>> d344c7da6b90b5549813c108489ecfaa3934984e
 
 
 
         if ($formBillet->isSubmitted() && $formBillet->isValid()){
-<<<<<<< HEAD
+
 //            (dump($formBillet)); die();
 
             $billet ->setCommandeId($commande);
@@ -136,7 +133,7 @@ class TicketController extends AbstractController
             $em->flush();
 
 //            TODO Rediriger vers la commande 3 et faire le service pour tarifs
-=======
+
 
             $billet->setCommandeId($commande);
             $data=$formBillet->getData();
@@ -152,9 +149,7 @@ class TicketController extends AbstractController
                 'billet'=>$billet,
                 'title'=>'Choix du billet',
             ]);
->>>>>>> d344c7da6b90b5549813c108489ecfaa3934984e
         }
-
 
             return $this->render('ticket/ticket_phase2.html.twig', [
                 'billet'=>$billet,
@@ -163,7 +158,36 @@ class TicketController extends AbstractController
             ]);
         }
 
+    /**
+     * @Route("/ticket3", name="ticket_phase_3")
+     * @param Request $request
+     * @param EntityManagerInterface $em
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+
+    public function showOrder (Request $request , EntityManagerInterface $em)
+        {
+            $session=$request->getSession();
+            $commande = $session->get("commande");
+            $repository = $em->getRepository(Commande::class);
+
+            /** @var Commande $commande */
+            $id =$commande->getId();
+            $billet = $commande->getBillets();
+            $dateVisit= $commande->getDateVisit();
+            dump($commande);
 
 
+
+
+
+            return $this->render('ticket/ticket_phase3.html.twig', [
+                'title'=>'Resumé" de la commande',
+                'commande'=>$commande,
+                'id'=>$id,
+                'billets'=>$billet,
+                'dateVisit'=>$dateVisit,
+            ]);
+        }
 
 }
