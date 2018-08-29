@@ -8,6 +8,7 @@ use App\Form\BilletType;
 use App\Form\CommandeType;
 use App\Service\CheckPrice;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -145,9 +146,11 @@ class TicketController extends AbstractController
             $em->persist($commande);
             $em->flush();
 
-            return $this->render('ticket/ticket_phase3.html.twig', [
-                'billet'=>$billet,
-                'title'=>'Choix du billet',
+            $id = $commande->getId();
+            dump($id);
+
+            return $this->redirectToRoute('ticket_phase_3', [
+                'id'=>'$id'
             ]);
         }
 
@@ -160,34 +163,19 @@ class TicketController extends AbstractController
 
     /**
      * @Route("/ticket3", name="ticket_phase_3")
-     * @param Request $request
-     * @param EntityManagerInterface $em
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
-    public function showOrder (Request $request , EntityManagerInterface $em)
-        {
-            $session=$request->getSession();
-            $commande = $session->get("commande");
-            $repository = $em->getRepository(Commande::class);
-
-            /** @var Commande $commande */
-            $id =$commande->getId();
-            $billet = $commande->getBillets();
-            $dateVisit= $commande->getDateVisit();
-            dump($commande);
+    public function showOrder ()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $commandes = $em->getRepository(Commande::class )
+            ->findAll();
 
 
-
-
-
-            return $this->render('ticket/ticket_phase3.html.twig', [
-                'title'=>'Resumé" de la commande',
-                'commande'=>$commande,
-                'id'=>$id,
-                'billets'=>$billet,
-                'dateVisit'=>$dateVisit,
-            ]);
-        }
+        return $this->render('ticket/ticket_phase3.html.twig' , [
+            'commandes'=>$commandes
+        ]);
+    }
 
 }
