@@ -56,7 +56,7 @@ class TicketController extends AbstractController
 
         $form = $this->createForm(CommandeType::class, $commande);
         $form->handleRequest($request);
-        dump($commande);
+
 
         if ($request->isMethod('POST'))
         {
@@ -113,38 +113,22 @@ class TicketController extends AbstractController
     $formBillet=$form->getForm();
     $formBillet->handleRequest($request);
     $form->getData();
-//    $formBillet=$form->getForm();
-//    $formBillet->handleRequest($request);
-
-
 
         if ($formBillet->isSubmitted() && $formBillet->isValid()){
-            $billet ->setCommandeId($commande);
             $data=$formBillet->getData();
 
                 for ($i=0; $i<$nombre_tickets; $i++) {
                  $commande->addBillet($data[$i]);
+
                 }
-            $em->persist($commande);
-            $em->flush();
-
-//            TODO Rediriger vers la commande 3 et faire le service pour tarifs
-
-
-            $billet->setCommandeId($commande);
-            $data=$formBillet->getData();
-
-                for ($i=0; $i<$nombre_tickets; $i++)
-                {
-                    $commande->addBillet($data[$i]);
-                }
-            $em->persist($commande);
-            $em->flush();
+            $session->set('commande', $commande);
+//            $em->persist($commande);
+//            $em->flush();
 
             $id = $commande->getId();
 
             return $this->redirectToRoute('ticket_phase_3', [
-                'id'=>'$id'
+                'commande'=>$commande
             ]);
         }
 
@@ -153,6 +137,7 @@ class TicketController extends AbstractController
                 'title'=>'Choix du billet',
                 'formBillet'=>$formBillet->createView()
             ]);
+        // TODO CONFIGURER SERVICE DE CALCUL DE PRIX ET GENERATION DU BILLET (VOIR MON SLACk)
         }
 
     /**
@@ -170,15 +155,15 @@ class TicketController extends AbstractController
 
 
 
-        $em=$this->getDoctrine()->getManager();
-        $commandes = $em->getRepository(Commande::class )
-            ->findOneBy(['mail'=> $mail]);
-        $billets = $em->getRepository(Billet::class)
-            ->findBy(['commande' => $commande]);
+//        $em=$this->getDoctrine()->getManager();
+//        $commandes = $em->getRepository(Commande::class )
+//            ->findOneBy(['mail'=> $mail]);
+//        $billets = $em->getRepository(Billet::class)
+//            ->findBy(['commande' => $commande]);
 
         return $this->render('ticket/ticket_phase3.html.twig' , [
             'mail'=>$mail,
-            'commandes'=>$commandes,
+            'commandes'=>$commande,
             'billets'=>$billets
         ]);
     }

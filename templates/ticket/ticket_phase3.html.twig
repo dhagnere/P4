@@ -4,6 +4,8 @@
 {% block body %}
     <br>
     <h1>RESUME DE VOTRE COMMANDE</h1>
+
+
         <table class="table table-striped">
             <thead>
             <tr>
@@ -19,10 +21,10 @@
                         <td>{{ commandes.createdAt|date('d-m-Y') }}</td>
                         <td>{{ commandes.dateVisit|date('d-m-Y') }}</td>
                         <td>{{ commandes.nbTickets }}</td>
+
                     </tr>
             </tbody>
         </table>
-
 
 
         <div class="pull-right">
@@ -34,16 +36,16 @@
                     <br>
                     <hr>
                     <div class="panel-body">
-                        {% for key, billet in billets %}
-                            <li>
+
+                        {%  for billet in commandes.billets %}
+
+                            <tr>
                                 <ul><h4>NOM DU VISITEUR : {{ billet.name|e }}</h4></ul>
                                 <ol><h4>PRENOM DU VISITEUR: {{ billet.surname|e }}</h4></ol>
-                                <ol><h4>DATE DE NAISSANCE : {{ billet.birthday|date('d-m-Y') }}</h4></ol>
-                                <ol>{{ billet.country }}</ol>
-                                {#<ol>{{ billet.price|e }}</ol>#}
+                            </tr>
                         {% endfor %}
                     <hr>
-                            </li>
+
                     </div>
                 </div>
             </div>
