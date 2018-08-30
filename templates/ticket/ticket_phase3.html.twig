@@ -14,17 +14,41 @@
             </tr>
             </thead>
             <tbody>
-                {% for commande in commandes %}
                     <tr>
-                        <td>{{ commande.mail }}</td>
-                        <td>{{ commande.createdAt|date('d-m-Y') }}</td>
-                        <td>{{ commande.dateVisit|date('d-m-Y') }}</td>
-                        <td>{{ commande.nbTickets }}</td>
-
+                        <td>{{ commandes.mail }}</td>
+                        <td>{{ commandes.createdAt|date('d-m-Y') }}</td>
+                        <td>{{ commandes.dateVisit|date('d-m-Y') }}</td>
+                        <td>{{ commandes.nbTickets }}</td>
                     </tr>
-                {% endfor %}
             </tbody>
         </table>
+
+
+
+        <div class="pull-right">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> {{ "RESUME DES TICKETS"|trans}}</h4>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="panel-body">
+                        {% for key, billet in billets %}
+                            <li>
+                                <ul><h4>NOM DU VISITEUR : {{ billet.name|e }}</h4></ul>
+                                <ol><h4>PRENOM DU VISITEUR: {{ billet.surname|e }}</h4></ol>
+                                <ol><h4>DATE DE NAISSANCE : {{ billet.birthday|date('d-m-Y') }}</h4></ol>
+                                <ol>{{ billet.country }}</ol>
+                                {#<ol>{{ billet.price|e }}</ol>#}
+                        {% endfor %}
+                    <hr>
+                            </li>
+                    </div>
+                </div>
+            </div>
+     </div>
+
     <br/>
                     {#<a href="{{ path('prepare_stripe') }}">Valider le panier</a>#}
                 {#{% else %}#}

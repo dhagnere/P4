@@ -27,7 +27,7 @@ class TicketController extends AbstractController
 
         $session = $request->getSession();
         return $this->render('ticket/home.html.twig' ,[
-            'title'=>"Bienvenue sur la billetterie en ligne du Musée du Louvre"
+            'title'=>'Bienvenue au Musée du Louvre'
         ]);
     }
 
@@ -70,7 +70,7 @@ class TicketController extends AbstractController
 
                 $em=$this->getDoctrine()->getManager();
                 $em->persist($commande);
-//                $em->flush();
+                $em->flush();
 //
                 $this->addFlash('success' , "Etape suivante : Veuillez renseigner chaque ticket.");
 //  on redirect vers la deuxieme phase
@@ -110,26 +110,21 @@ class TicketController extends AbstractController
                     ->getForm();
             }
 
-
-        $formBillet=$form->getForm();
-        $formBillet->handleRequest($request);
-        $form->getData();
     $formBillet=$form->getForm();
     $formBillet->handleRequest($request);
+    $form->getData();
+//    $formBillet=$form->getForm();
+//    $formBillet->handleRequest($request);
 
 
 
         if ($formBillet->isSubmitted() && $formBillet->isValid()){
-
-//            (dump($formBillet)); die();
-
             $billet ->setCommandeId($commande);
             $data=$formBillet->getData();
 
-            for ($i=0; $i<$nombre_tickets; $i++)
-            {
-             $commande->addBillet($data[$i]);
-            }
+                for ($i=0; $i<$nombre_tickets; $i++) {
+                 $commande->addBillet($data[$i]);
+                }
             $em->persist($commande);
             $em->flush();
 
@@ -147,7 +142,6 @@ class TicketController extends AbstractController
             $em->flush();
 
             $id = $commande->getId();
-            dump($id);
 
             return $this->redirectToRoute('ticket_phase_3', [
                 'id'=>'$id'
@@ -166,15 +160,26 @@ class TicketController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
-    public function showOrder ()
+    public function showOrder (Request $request, EntityManagerInterface $em)
     {
+        $session=$request->getSession();
+        $commande = $session->get("commande");
+        $billets = $session->getId();
+        $mail = $commande->getMail();
+
+
+
+
         $em=$this->getDoctrine()->getManager();
         $commandes = $em->getRepository(Commande::class )
-            ->findAll();
-
+            ->findOneBy(['mail'=> $mail]);
+        $billets = $em->getRepository(Billet::class)
+            ->findBy(['commande' => $commande]);
 
         return $this->render('ticket/ticket_phase3.html.twig' , [
-            'commandes'=>$commandes
+            'mail'=>$mail,
+            'commandes'=>$commandes,
+            'billets'=>$billets
         ]);
     }
 
