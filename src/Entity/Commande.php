@@ -39,6 +39,11 @@ class Commande
     private $createdAt;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $halfday;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Billet", mappedBy="commande", cascade={"persist"})
      */
     private $billets;
@@ -130,5 +135,21 @@ class Commande
         }
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHalfday()
+    {
+        return $this->halfday;
+    }
+
+    /**
+     * @param mixed $halfday
+     */
+    public function setHalfday($halfday): void
+    {
+        $this->halfday = $halfday;
     }
 }

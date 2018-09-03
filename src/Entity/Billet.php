@@ -46,10 +46,57 @@ class Billet
     */
     private $commande;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $codeBillet;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $tarif;
+
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $categorie;
+
+    /**
+     * @return mixed
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
+    }
+
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
     public function getId()
     {
         return $this->id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCommande()
+    {
+        return $this->commande;
+    }
+
 
     public function getName(): ?string
     {
@@ -122,4 +169,46 @@ class Billet
 
         return $this;
     }
+    /**
+     * @return mixed
+     */
+    public function getCodeBillet()
+    {
+        return $this->codeBillet;
+    }
+
+    public function setCodeBillet(string $codeBillet)
+    {
+        $this->codeBillet=$codeBillet;
+    }
+
+    public function setBillet($billet)
+    {
+        $this->commande=$billet;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTarif()
+    {
+        return $this->tarif;
+    }
+
+    /**
+     * @param mixed $tarif
+     */
+    public function setTarif($tarif): void
+    {
+        $this->tarif = $tarif;
+    }
+
+    /**
+     * @param mixed $commande
+     */
+    public function setCommande($commande): void
+    {
+        $this->commande = $commande;
+    }
 }
+

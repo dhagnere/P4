@@ -8,7 +8,7 @@
 
 namespace App\Form;
 
-
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -42,7 +42,12 @@ class CommandeType extends AbstractType
             ->add('nb_tickets', IntegerType::class , [
                 'label'=>'Nombre de tickets désiré :'
             ])
-//            ->add('createdAt', DateType::class)
+            ->add('halfday', ChoiceType::class, array(
+                'label'=>'Durée de la visite :',
+                'choices' =>array(
+                    'Journée complète'=>false,
+                    'Demi-journée'=>true,
+                )))
             ->getForm();
     }
 

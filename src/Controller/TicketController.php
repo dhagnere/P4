@@ -7,6 +7,7 @@ use App\Entity\Commande;
 use App\Form\BilletType;
 use App\Form\CommandeType;
 use App\Service\CheckPrice;
+use App\Service\PriceHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -90,11 +91,10 @@ class TicketController extends AbstractController
     /**
      * @Route("/ticket2", name="ticket_phase_2")
      * @param Request $request
-     * @param EntityManagerInterface $em
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
-    public function ticket_2(Request $request, EntityManagerInterface $em )
+    public function ticket_2(Request $request)
     {
 
     $billet =   new Billet();
@@ -137,7 +137,6 @@ class TicketController extends AbstractController
                 'title'=>'Choix du billet',
                 'formBillet'=>$formBillet->createView()
             ]);
-        // TODO CONFIGURER SERVICE DE CALCUL DE PRIX ET GENERATION DU BILLET (VOIR MON SLACk)
         }
 
     /**
@@ -145,26 +144,20 @@ class TicketController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
-    public function showOrder (Request $request, EntityManagerInterface $em)
+    public function showOrder (Request $request, CheckPrice $checkPrice)
     {
         $session=$request->getSession();
         $commande = $session->get("commande");
-        $billets = $session->getId();
+        $billet = $session->getId();
+        $billet = $checkPrice->generateBillets($commande);
+
+
         $mail = $commande->getMail();
-
-
-
-
-//        $em=$this->getDoctrine()->getManager();
-//        $commandes = $em->getRepository(Commande::class )
-//            ->findOneBy(['mail'=> $mail]);
-//        $billets = $em->getRepository(Billet::class)
-//            ->findBy(['commande' => $commande]);
 
         return $this->render('ticket/ticket_phase3.html.twig' , [
             'mail'=>$mail,
             'commandes'=>$commande,
-            'billets'=>$billets
+            'billets'=>$billet,
         ]);
     }
 

@@ -35,16 +35,24 @@
                     </div>
                     <br>
                     <hr>
-                    <div class="panel-body">
 
-                        {%  for billet in commandes.billets %}
-
-                            <tr>
+                    <div class="jumbotron">
+                        <p class="lead">
+                            {%  for billet in commandes.billets %}
                                 <ul><h4>NOM DU VISITEUR : {{ billet.name|e }}</h4></ul>
                                 <ol><h4>PRENOM DU VISITEUR: {{ billet.surname|e }}</h4></ol>
-                            </tr>
-                        {% endfor %}
-                    <hr>
+                                <ol><h4>TARIF DU BILLET: {{ billet.tarif }} Euros</h4></ol>
+                                <ol><h4>CODE DE VERIFICATION UNIQUE: {{ billet.codeBillet}}</h4></ol>
+                        </p>
+                    </div>
+
+
+                            {% endfor %}
+                    <hr class="my-4">
+
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Accéder au paiement</a>
+
+
 
                     </div>
                 </div>
