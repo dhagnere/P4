@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+    <div class="container">
+        <div class = "row">
+            <div class="col-xs-12 col-sm-6">
+                <form action="" method="POST">
+                    <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_tIAsd6EKR8yWR2t2OTQT2YXp"
+                            data-amount="99999"
+                            data-name="Billetterie en ligne"
+                            data-description="Musée du Louvre"
+                            data-image="images/musée-du-louvre.jpg"
+                            data-locale="fr">
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+    {% block javascripts %}
+
+    {% endblock %}

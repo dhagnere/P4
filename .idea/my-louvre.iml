@@ -107,5 +107,6 @@
     <orderEntry type="library" name="popper" level="application" />
     <orderEntry type="library" name="bootstrap-datepicker" level="application" />
     <orderEntry type="library" name="bootstrap-datepicker.fr" level="application" />
+    <orderEntry type="library" name="checkout" level="application" />
   </component>
 </module>

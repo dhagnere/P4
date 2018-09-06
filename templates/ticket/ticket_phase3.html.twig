@@ -45,14 +45,10 @@
                                 <ol><h4>CODE DE VERIFICATION UNIQUE: {{ billet.codeBillet}}</h4></ol>
                         </p>
                     </div>
-
-
                             {% endfor %}
                     <hr class="my-4">
-
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Accéder au paiement</a>
-
-
+                            <a class="btn btn-primary btn-lg"
+                                href="{{ path('cashout') }}" role="button">Accéder au paiement</a>
 
                     </div>
                 </div>
@@ -60,10 +56,7 @@
      </div>
 
     <br/>
-                    {#<a href="{{ path('prepare_stripe') }}">Valider le panier</a>#}
-                {#{% else %}#}
-                    {#<tr><td>Votre panier est vide</td></tr>#}
-                {#{% endif %}#}
+
 {%  endblock %}
 
 {% block javascripts %}
