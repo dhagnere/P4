@@ -44,16 +44,22 @@ class Commande
     private $halfday;
 
     /**
+     * @ORM\Column(type="integer" , nullable=true)
+     */
+        private $categorie;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Billet", mappedBy="commande", cascade={"persist"})
      */
     private $billets;
+
 
     public function __construct()
     {
         $this->billets = new ArrayCollection();
     }
 
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -106,31 +112,43 @@ class Commande
         return $this;
     }
 
+    public function getHalfday(): ?bool
+    {
+        return $this->halfday;
+    }
+
+    public function setHalfday(bool $halfday): self
+    {
+        $this->halfday = $halfday;
+
+        return $this;
+    }
+
     /**
-     * @return Collection|Billet[]
+     * @return Collection|billet[]
      */
     public function getBillets(): Collection
     {
         return $this->billets;
     }
 
-    public function addBillet(Billet $billet): self
+    public function addBillet(billet $billet): self
     {
         if (!$this->billets->contains($billet)) {
             $this->billets[] = $billet;
-            $billet->setCommandeId($this);
+            $billet->setCommande($this);
         }
 
         return $this;
     }
 
-    public function removeBillet(Billet $billet): self
+    public function removeBillet(billet $billet): self
     {
         if ($this->billets->contains($billet)) {
             $this->billets->removeElement($billet);
             // set the owning side to null (unless already changed)
-            if ($billet->getCommandeId() === $this) {
-                $billet->setCommandeId(null);
+            if ($billet->getCommande() === $this) {
+                $billet->setCommande(null);
             }
         }
 
@@ -138,18 +156,27 @@ class Commande
     }
 
     /**
-     * @return mixed
+     * @return int|null
      */
-    public function getHalfday()
+    public function getCategorie(): ?int
     {
-        return $this->halfday;
+        return $this->categorie;
     }
 
-    /**
-     * @param mixed $halfday
-     */
-    public function setHalfday($halfday): void
+    public function setCategorie(?int $categorie): self
     {
-        $this->halfday = $halfday;
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getPrixTotal()
+    {
+        $prixTotal = 0;
+        foreach ($this->getBillets() as $billet){
+
+            $prixTotal += $billet->getTarif();
+        }
+        return $prixTotal;
     }
 }

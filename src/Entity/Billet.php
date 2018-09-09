@@ -37,66 +37,35 @@ class Billet
     private $country;
 
     /**
-     * @ORM\Column(type="boolean", nullable=false)
+     * @ORM\Column(type="boolean")
      */
     private $discount;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets")$
-    */
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="billets")
+     * @ORM\JoinColumn(nullable=false)
+     */
     private $commande;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $codeBillet;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
      */
     private $tarif;
-
 
     /**
      * @ORM\Column(type="integer")
      */
     private $categorie;
 
-    /**
-     * @return mixed
-     */
-    public function getCategorie()
-    {
-        return $this->categorie;
-    }
-
-    public function setCategorie($categorie)
-    {
-        $this->categorie = $categorie;
-    }
-
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
-
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getCommande()
-    {
-        return $this->commande;
-    }
-
 
     public function getName(): ?string
     {
@@ -151,64 +120,66 @@ class Billet
         return $this->discount;
     }
 
-    public function setDiscount(?bool $discount): self
+    public function setDiscount(bool $discount): self
     {
         $this->discount = $discount;
 
         return $this;
     }
 
-    public function getCommandeId(): ?Commande
+    public function getCommande(): ?Commande
     {
         return $this->commande;
     }
 
-    public function setCommandeId(?Commande $commande): self
+    public function setCommande(?Commande $commande): self
     {
         $this->commande = $commande;
 
         return $this;
     }
-    /**
-     * @return mixed
-     */
-    public function getCodeBillet()
+
+    public function getCodeBillet(): ?string
     {
         return $this->codeBillet;
     }
 
-    public function setCodeBillet(string $codeBillet)
+    public function setCodeBillet(?string $codeBillet): self
     {
-        $this->codeBillet=$codeBillet;
+        $this->codeBillet = $codeBillet;
+
+        return $this;
     }
 
-    public function setBillet($billet)
-    {
-        $this->commande=$billet;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTarif()
+    public function getTarif(): ?int
     {
         return $this->tarif;
     }
 
-    /**
-     * @param mixed $tarif
-     */
-    public function setTarif($tarif): void
+    public function setTarif(int $tarif): self
     {
         $this->tarif = $tarif;
+
+        return $this;
     }
 
-    /**
-     * @param mixed $commande
-     */
-    public function setCommande($commande): void
+    public function getCategorie(): ?int
     {
-        $this->commande = $commande;
+        return $this->categorie;
     }
-}
 
+    public function setCategorie(int $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function setBillet($billet)
+    {
+        $this->billet=$billet;
+
+        return $this;
+    }
+
+}

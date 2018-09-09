@@ -38,6 +38,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sensiolabs/security-checker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/stripe/stripe-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/asset" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/browser-kit" />
@@ -107,6 +109,7 @@
     <orderEntry type="library" name="popper" level="application" />
     <orderEntry type="library" name="bootstrap-datepicker" level="application" />
     <orderEntry type="library" name="bootstrap-datepicker.fr" level="application" />
+    <orderEntry type="library" name="checkout" level="application" />
     <orderEntry type="library" name="checkout" level="application" />
   </component>
 </module>

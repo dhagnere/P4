@@ -10,14 +10,20 @@ namespace App\Service;
 
 use App\Entity\Billet;
 use App\Entity\Commande;
+use Doctrine\ORM\EntityManager;
 
 
 class CheckPrice
 {
 
+    /**
+     * @param Commande $commande
+     * @return Billet|mixed
+     */
     public function generateBillets(Commande $commande)
     {
-        foreach ($commande->getBillets() as $billet){
+        foreach ($commande->getBillets() as $billet)
+        {
             $billet->setBillet($this->generateBillet($billet, $commande));
         }
 
@@ -32,35 +38,35 @@ class CheckPrice
     public function generateBillet(Billet $billet, Commande $commande)
     {
         $dateNaissance = $billet->getBirthday();
-        dump($dateNaissance);
         $dateVisite = $commande->getDateVisit();
-        dump($dateVisite);
-
         $diff = $dateNaissance->diff($dateVisite);
-        dump($diff);
         $age = $diff->format('%Y');
-        dump($age);
+
 
         $categorie = 0;
         $tarif = 16;
 
-        if ($age < 4) {
+        if ($age < 4)
+        {
             $categorie = 0;
             $tarif = 0;
-        } elseif ($age < 12 AND $age > 4) {
+        } elseif ($age < 12 AND $age > 4)
+        {
             $categorie = 1;
             $tarif = 8;
-        } elseif ($billet->getDiscount()) {
+        } elseif ($billet->getDiscount())
+        {
             $categorie = 2;
             $tarif = 10;
-        } elseif ($age > 60) {
+        } elseif ($age > 60)
+        {
             $categorie = 3;
             $tarif = 12;
-        } else {
+        } else
+            {
             $categorie = 4;
             $tarif = 16;
         }
-        dump($tarif);
 
         if ($commande->getHalfday()) {
             $tarif = $tarif / 2;
@@ -76,8 +82,22 @@ class CheckPrice
         $billet->setCategorie($categorie);
         $billet->setTarif($tarif);
         $billet->setCodeBillet($codeBillet);
-        dump($codeBillet);
+
         return $billet;
+    }
+// TODO CALCULER LE MONTANT TOTAL POUR PASSER A STRIPE
+    public function totalTarif ($billets)
+    {
+        {
+            $totalTarif = 0;
+
+            foreach ($billets as $billet)
+            {
+                $totalTarif = $billet->getTarif();
+                $coutTotal += $coutTarif;
+            }
+            return $coutTotal;
+        }
     }
 
 }

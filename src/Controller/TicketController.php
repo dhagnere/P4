@@ -7,9 +7,7 @@ use App\Entity\Commande;
 use App\Form\BilletType;
 use App\Form\CommandeType;
 use App\Service\CheckPrice;
-use App\Service\PriceHelper;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -92,7 +90,7 @@ class TicketController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
-    public function ticket_2(Request $request)
+    public function ticket_2(Request $request, EntityManagerInterface $em , CheckPrice $checkPrice)
     {
 
         $billet = new Billet();
@@ -111,18 +109,14 @@ class TicketController extends AbstractController
         $formBillet->handleRequest($request);
         $form->getData();
 
-        if ($formBillet->isSubmitted() && $formBillet->isValid()) {
+        if ($formBillet->isSubmitted() && $formBillet->isValid())
+        {
             $data = $formBillet->getData();
 
-            for ($i = 0; $i < $nombre_tickets; $i++) {
+            for ($i = 0; $i < $nombre_tickets; $i++)
+            {
                 $commande->addBillet($data[$i]);
-
             }
-            $session->set('commande', $commande);
-//            $em->persist($commande);
-//            $em->flush();
-
-            $id = $commande->getId();
 
             return $this->redirectToRoute('ticket_phase_3', [
                 'commande' => $commande
@@ -141,32 +135,41 @@ class TicketController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
-    public function showOrder(Request $request, CheckPrice $checkPrice)
+    public function showOrder(Request $request, CheckPrice $checkPrice, EntityManagerInterface $em)
     {
         $session = $request->getSession();
         $commande = $session->get("commande");
         $billet = $session->getId();
         $billet = $checkPrice->generateBillets($commande);
-
-
         $mail = $commande->getMail();
+
+        $session->set('commande', $commande);
+        $em->persist($commande);
+        $em->flush();
+
+        if ($request->isMethod('POST')){
+            $token = $request->get('stripeToken');
+
+            \Stripe\Stripe::setApiKey("sk_test_mYNDATY5kBxjDkF50YTdMV2X");
+
+            \Stripe\Charge::create(array(
+                "amount" => $this->get('commande.Prix'*100),
+                "currency" => "euro",
+                "source" => "$token", // obtained with Stripe.js
+                "description" => "test premiere facturation"
+            ));
+
+            $this->addFlash('Succes' , 'Votre commande est bien enregistrée');
+
+            return $this->redirectToRoute('home');
+
+        }
 
         return $this->render('ticket/ticket_phase3.html.twig', [
             'mail' => $mail,
-            'commandes' => $commande,
+            'commande' => $commande,
             'billets' => $billet,
         ]);
     }
 
-    /**
-     * @Route("/cashout" , name="cashout")
-     * @return Response
-     */
-    public function cashout()
-    {
-
-        return $this->render('order/checkout.html.twig', [
-
-        ]);
-    }
 }

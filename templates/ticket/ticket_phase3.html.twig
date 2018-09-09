@@ -2,62 +2,68 @@
 
 
 {% block body %}
-    <br>
-    <h1>RESUME DE VOTRE COMMANDE</h1>
-
-
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Email</th>
-                <th>Date de la commande</th>
-                <th>Date de visite</th>
-                <th>Nombre de tickets</th>
-            </tr>
-            </thead>
-            <tbody>
+<html>
+    <body>
+        <div>
+        <h1>RESUME DE VOTRE COMMANDE</h1>
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <td>{{ commandes.mail }}</td>
-                        <td>{{ commandes.createdAt|date('d-m-Y') }}</td>
-                        <td>{{ commandes.dateVisit|date('d-m-Y') }}</td>
-                        <td>{{ commandes.nbTickets }}</td>
-
+                        <th>Email</th>
+                        <th>Date de la commande</th>
+                        <th>Date de visite</th>
+                        <th>Nombre de tickets</th>
                     </tr>
-            </tbody>
-        </table>
-
-
-        <div class="pull-right">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> {{ "RESUME DES TICKETS"|trans}}</h4>
-                    </div>
-                    <br>
-                    <hr>
-
-                    <div class="jumbotron">
-                        <p class="lead">
-                            {%  for billet in commandes.billets %}
-                                <ul><h4>NOM DU VISITEUR : {{ billet.name|e }}</h4></ul>
-                                <ol><h4>PRENOM DU VISITEUR: {{ billet.surname|e }}</h4></ol>
-                                <ol><h4>TARIF DU BILLET: {{ billet.tarif }} Euros</h4></ol>
-                                <ol><h4>CODE DE VERIFICATION UNIQUE: {{ billet.codeBillet}}</h4></ol>
-                        </p>
-                    </div>
-                            {% endfor %}
-                    <hr class="my-4">
-                            <a class="btn btn-primary btn-lg"
-                                href="{{ path('cashout') }}" role="button">Accéder au paiement</a>
-
+                </thead>
+                    <tbody>
+                            <tr>
+                                <td>{{ commande.mail }}</td>
+                                <td>{{ commande.createdAt|date('d-m-Y') }}</td>
+                                <td>{{ commande.dateVisit|date('d-m-Y') }}</td>
+                                <td>{{ commande.nbTickets }}</td>
+                            </tr>
+                    </tbody>
+            </table>
+         </div>
+            <div class="pull-right">
+                <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-check"></i> {{ "RESUME DES TICKETS"|trans}}</h4>
+                </div>
+                    <div class = "row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="jumbotron">
+                                    {%  for billet in commande.billets %}
+                                        <hr color="white">
+                                        <ul>NOM DU VISITEUR : {{ billet.name|e }}</ul>
+                                        <ol>PRENOM DU VISITEUR: {{ billet.surname|e }}</ol>
+                                        <ol>TARIF DU BILLET: {{ billet.tarif }} Euros</ol>
+                                        <ol>CODE DE VERIFICATION UNIQUE: {{ billet.codeBillet}}</h4></ol>
+                                        <hr color="white">
+                                    {% endfor %}
+                            </div>
+                            <div class="col-xs-12 col-sm-6" style="display:flex; margin-left : 400px;">
+                                <form action="" method="POST">
+                                    <script
+                                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                            data-key="pk_test_tIAsd6EKR8yWR2t2OTQT2YXp"
+                                            data-amount="{{ commande.PrixTotal*100 }}"
+                                            data-name="Billetterie en ligne"
+                                            data-description="Musée du Louvre"
+                                            data-image="{{ asset ('images/Visage.png')}}"
+                                            data-locale="fr"
+                                            data-currency ="EUR">
+                                    </script>
+                                </form>
+                            </div>
+                         </div>
                     </div>
                 </div>
-            </div>
-     </div>
-
+        </div>
+    </div>
     <br/>
-
+</body>
 {%  endblock %}
-
 {% block javascripts %}
 {% endblock %}

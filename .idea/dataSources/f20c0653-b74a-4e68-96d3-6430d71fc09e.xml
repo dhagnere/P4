@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="p4@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.10">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.11">
     <root id="1">
       <ServerVersion>5.7.21</ServerVersion>
       <DefaultEngine>MyISAM</DefaultEngine>
@@ -943,105 +943,129 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="233" name="name">
+    <column id="237" parent="233" name="commande_id">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="233" name="surname">
+    <column id="238" parent="233" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="233" name="birthday">
+    <column id="239" parent="233" name="surname">
       <Position>4</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="240" parent="233" name="country">
-      <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="233" name="discount">
+    <column id="240" parent="233" name="birthday">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="241" parent="233" name="country">
       <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="242" parent="233" name="discount">
+      <Position>7</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="233" name="commande_id">
-      <Position>7</Position>
-      <DataType>int(11)|0s</DataType>
+    <column id="243" parent="233" name="code_billet">
+      <Position>8</Position>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="243" parent="233" name="IDX_1F034AF682EA2E54">
+    <column id="244" parent="233" name="tarif">
+      <Position>9</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="245" parent="233" name="categorie">
+      <Position>10</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="246" parent="233" name="IDX_1F034AF682EA2E54">
       <ColNames>commande_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="244" parent="233" name="PRIMARY">
+    <key id="247" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="245" parent="233" name="FK_1F034AF682EA2E54">
+    <foreign-key id="248" parent="233" name="FK_1F034AF682EA2E54">
       <ColNames>commande_id</ColNames>
       <RefSchemaName>p4</RefSchemaName>
       <RefTableName>commande</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="246" parent="234" name="id">
+    <column id="249" parent="234" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="234" name="mail">
+    <column id="250" parent="234" name="mail">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="234" name="date_visit">
+    <column id="251" parent="234" name="date_visit">
       <Position>3</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="234" name="nb_tickets">
+    <column id="252" parent="234" name="nb_tickets">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="234" name="created_at">
+    <column id="253" parent="234" name="created_at">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="234" name="halfday">
+    <column id="254" parent="234" name="halfday">
       <Position>6</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="252" parent="234" name="PRIMARY">
+    <column id="255" parent="234" name="categorie">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="256" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="253" parent="235" name="version">
+    <column id="257" parent="235" name="version">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="254" parent="235" name="PRIMARY">
+    <key id="258" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>version</ColNames>
       <Primary>1</Primary>
