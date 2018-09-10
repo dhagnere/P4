@@ -2,9 +2,14 @@
 
 
 {% block body %}
-<html>
     <body>
-        <div>
+
+    <div class="container">
+        {% for msg in app.session.flashbag.get('success') %}
+            <div class="alert alert-success">
+                {{ msg }}
+            </div>
+        {% endfor %}
         <h1>RESUME DE VOTRE COMMANDE</h1>
             <table class="table table-striped">
                 <thead>
@@ -47,7 +52,7 @@
                                 <form action="" method="POST">
                                     <script
                                             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                            data-key="pk_test_tIAsd6EKR8yWR2t2OTQT2YXp"
+                                            data-key="{{ stripe_public_key }}"
                                             data-amount="{{ commande.PrixTotal*100 }}"
                                             data-name="Billetterie en ligne"
                                             data-description="Musée du Louvre"

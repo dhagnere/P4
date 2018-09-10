@@ -30,6 +30,8 @@ class CheckPrice
         return $billet;
     }
 
+
+
     /**
      * @param Billet $billet
      * @param Commande $commande
@@ -84,20 +86,6 @@ class CheckPrice
         $billet->setCodeBillet($codeBillet);
 
         return $billet;
-    }
-// TODO CALCULER LE MONTANT TOTAL POUR PASSER A STRIPE
-    public function totalTarif ($billets)
-    {
-        {
-            $totalTarif = 0;
-
-            foreach ($billets as $billet)
-            {
-                $totalTarif = $billet->getTarif();
-                $coutTotal += $coutTarif;
-            }
-            return $coutTotal;
-        }
     }
 
 }

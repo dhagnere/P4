@@ -53,6 +53,11 @@ class Commande
      */
     private $billets;
 
+    /**
+     * @ORM\Column(type="integer" , nullable=true)
+     */
+    private $prixTotal;
+
 
     public function __construct()
     {
@@ -179,4 +184,12 @@ class Commande
         }
         return $prixTotal;
     }
+
+    public function setPrixTotal(?int $prixTotal)
+    {
+        $this->prixTotal = $prixTotal;
+
+        return $this;
+    }
+
 }

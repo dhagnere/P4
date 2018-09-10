@@ -66,9 +66,9 @@ class TicketController extends AbstractController
                 $commande->setCreatedAt(new \DateTime());
                 //  on appelle l'EntityManager
 
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($commande);
-                $em->flush();
+//                $em = $this->getDoctrine()->getManager();
+//                $em->persist($commande);
+//                $em->flush();
 //
                 $this->addFlash('success', "Etape suivante : Veuillez renseigner chaque ticket.");
 //  on redirect vers la deuxieme phase
@@ -149,19 +149,24 @@ class TicketController extends AbstractController
 
         if ($request->isMethod('POST')){
             $token = $request->get('stripeToken');
+                try{
+                    \Stripe\Stripe::setApiKey($this->getParameter('stripe_secret_key'));
+                    \Stripe\Charge::create(array(
+                        "amount" => $commande->getPrixTotal()*100,
+                        "currency" => "eur",
+                        "source" => "$token", // obtained with Stripe.js
+                        "description" => "test premiere facturation"
+                    ));
+                }catch (\Stripe\Error\Card $e){
+                    $this->addFlash('refus', 'Votre paiement à été refusé veuillez saisir un autre numéro de carte');
 
-            \Stripe\Stripe::setApiKey("sk_test_mYNDATY5kBxjDkF50YTdMV2X");
+                    return $this->render('ticket/ticket_phase3.html.twig', array('commande' =>$commande,
+                        'stripe_public_key' => $this->getParameter('stripe_public_key')));
+                }
 
-            \Stripe\Charge::create(array(
-                "amount" => $this->get('commande.Prix'*100),
-                "currency" => "euro",
-                "source" => "$token", // obtained with Stripe.js
-                "description" => "test premiere facturation"
-            ));
+                $this->addFlash('Success' , 'Votre commande est bien enregistrée');
 
-            $this->addFlash('Succes' , 'Votre commande est bien enregistrée');
-
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('Merci');
 
         }
 
@@ -169,6 +174,23 @@ class TicketController extends AbstractController
             'mail' => $mail,
             'commande' => $commande,
             'billets' => $billet,
+            'stripe_public_key' => $this->getParameter('stripe_public_key')
+        ]);
+    }
+
+    /**
+     * @Route("/thanks", name="Merci"))
+     *
+     */
+    public function thanks(Request $request)
+    {
+        $session = $request->getSession();
+        $commande = $session->get("commande");
+        $mail = $commande->getMail();
+
+        return $this->render('remerciements/thanks.html.twig', [
+            'title' => 'MERCI',
+            'mail' => $mail
         ]);
     }
 
