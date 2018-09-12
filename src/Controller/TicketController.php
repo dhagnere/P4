@@ -182,16 +182,27 @@ class TicketController extends AbstractController
      * @Route("/thanks", name="Merci"))
      *
      */
-    public function thanks(Request $request)
+    public function thanks(Request $request, \Swift_Mailer $mailer)
     {
         $session = $request->getSession();
         $commande = $session->get("commande");
         $mail = $commande->getMail();
 
-        return $this->render('remerciements/thanks.html.twig', [
-            'title' => 'MERCI',
-            'mail' => $mail
+        $message = (new\Swift_Message('Mail de confirmation'))
+            ->setFrom('jobwow@gmail.com')
+            ->setTo($mail)
+            ->setBody(
+                $this->renderView('ticket/ticket_phase3.html.twig',
+                array('mail' => $mail)),
+                'text/html');
+
+        $mailer->send($message);
+
+        return $this->render('ticket/home.html.twig', [
+            'title' => 'Bienvenue au Musée du Louvre'
         ]);
     }
+
+
 
 }

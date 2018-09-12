@@ -5,19 +5,17 @@
     <br>
 
     <div class="titre-accueil">
-        <h1>{{ title }}</h1>
+        <h1>{{ title|upper }}</h1>
     </div>
 
     <hr>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="images/louvre.jpg" alt="First slide">
-                </div>
-            </div>
-        </div>
+
+    <div class="img-accueil">
+        <img class="d-block w-100" src="{{ asset("images/louvre.jpg") }}" alt="First slide">
+    </div>
+
     <br><br>
-    <div class="calendar-center">
+    <div class="button-access-billet">
      <a href="{{ path("ticket_phase_1") }}" class="btn btn-info" role="button">Acceder à la billeterie en ligne</a>
     </div>
     <br><hr>
