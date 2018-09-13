@@ -7,8 +7,9 @@ use App\Entity\Commande;
 use App\Form\BilletType;
 use App\Form\CommandeType;
 use App\Service\CheckPrice;
+Use App\Service\Email;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Routing\Annotation\Route;
+use PhpParser\Builder\Use_;use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -66,12 +67,9 @@ class TicketController extends AbstractController
                 $commande->setCreatedAt(new \DateTime());
                 //  on appelle l'EntityManager
 
-//                $em = $this->getDoctrine()->getManager();
-//                $em->persist($commande);
-//                $em->flush();
-//
+
                 $this->addFlash('success', "Etape suivante : Veuillez renseigner chaque ticket.");
-//  on redirect vers la deuxieme phase
+//todo CONSTANT NB DE BILLET
                 return $this->redirectToRoute('ticket_phase_2');
 
             } else
@@ -135,7 +133,7 @@ class TicketController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
-    public function showOrder(Request $request, CheckPrice $checkPrice, EntityManagerInterface $em)
+    public function showOrder(Request $request, CheckPrice $checkPrice, EntityManagerInterface $em , Email $email)
     {
         $session = $request->getSession();
         $commande = $session->get("commande");
@@ -154,16 +152,18 @@ class TicketController extends AbstractController
                     \Stripe\Charge::create(array(
                         "amount" => $commande->getPrixTotal()*100,
                         "currency" => "eur",
-                        "source" => "$token", // obtained with Stripe.js
+                        "source" => "$token",
                         "description" => "test premiere facturation"
                     ));
                 }catch (\Stripe\Error\Card $e){
                     $this->addFlash('refus', 'Votre paiement à été refusé veuillez saisir un autre numéro de carte');
 
-                    return $this->render('ticket/ticket_phase3.html.twig', array('commande' =>$commande,
+                    return $this->render('ticket/ticket_phase3.html.twig',
+                        array('commande' =>$commande,
                         'stripe_public_key' => $this->getParameter('stripe_public_key')));
                 }
 
+                $email->sendMail($commande);
                 $this->addFlash('Success' , 'Votre commande est bien enregistrée');
 
             return $this->redirectToRoute('Merci');
@@ -182,24 +182,15 @@ class TicketController extends AbstractController
      * @Route("/thanks", name="Merci"))
      *
      */
-    public function thanks(Request $request, \Swift_Mailer $mailer)
+    public function thanks(Request $request, \Swift_Mailer $mailer )
     {
         $session = $request->getSession();
         $commande = $session->get("commande");
         $mail = $commande->getMail();
 
-        $message = (new\Swift_Message('Mail de confirmation'))
-            ->setFrom('jobwow@gmail.com')
-            ->setTo($mail)
-            ->setBody(
-                $this->renderView('ticket/ticket_phase3.html.twig',
-                array('mail' => $mail)),
-                'text/html');
 
-        $mailer->send($message);
-
-        return $this->render('ticket/home.html.twig', [
-            'title' => 'Bienvenue au Musée du Louvre'
+        return $this->render('remerciements/thanks.html.twig', [
+            'title' => 'Merci de votre future visite'
         ]);
     }
 

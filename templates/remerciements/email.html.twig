@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0/css/bootstrap.min.css">
+    <style>
+        .jumbotron{
+            background: #fafafa;
+            padding: 30px;
+        }
+        h1{
+            text-align: center;
+        }
+        /*.total{*/
+            /*float:right;*/
+
+        /*}*/
+
+        p{
+            font-size: 16px;
+        }
+        table{
+            width: 100%;
+
+        }
+        th,td{
+            width: 24%;
+            border: 1px solid black;
+            text-align: center;
+            padding-top:5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+    <div class="container">
+        <h1>RESUME DE VOTRE COMMANDE</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Email</th>
+                <th>Date de la commande</th>
+                <th>Date de visite</th>
+                <th>Nombre de tickets</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ commande.mail }}</td>
+                <td>{{ commande.createdAt|date('d-m-Y') }}</td>
+                <td>{{ commande.dateVisit|date('d-m-Y') }}</td>
+                <td>{{ commande.nbTickets }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pull-right">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-check"></i> {{ "RESUME DES TICKETS"|trans}}</h4>
+                </div>
+                <div class = "row">
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="jumbotron">
+                            {%  for billet in commande.billets %}
+                                <hr color="white">
+                                <ul>NOM DU VISITEUR : {{ billet.name|e }}</ul>
+                                <ol>PRENOM DU VISITEUR: {{ billet.surname|e }}</ol>
+                                <ol>TARIF DU BILLET: {{ billet.tarif }} Euros</ol>
+                                <ol>CODE DE VERIFICATION UNIQUE: {{ billet.codeBillet}}</h4></ol>
+                                <hr color="white">
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+</body>
+</html>
