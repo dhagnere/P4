@@ -9,7 +9,7 @@ use App\Form\CommandeType;
 use App\Service\CheckPrice;
 Use App\Service\Email;
 use Doctrine\ORM\EntityManagerInterface;
-use PhpParser\Builder\Use_;use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -52,6 +52,7 @@ class TicketController extends AbstractController
      */
     public function ticket_1(Request $request, EntityManagerInterface $em)
     {
+
         $commande = new Commande();
         $session = $request->getSession();
 
@@ -107,18 +108,18 @@ class TicketController extends AbstractController
         $formBillet->handleRequest($request);
         $form->getData();
 
-        if ($formBillet->isSubmitted() && $formBillet->isValid())
-        {
-            $data = $formBillet->getData();
+        if ($request->isMethod('POST')){
+                if ($formBillet->isSubmitted() && $formBillet->isValid()) {
+                    $data = $formBillet->getData();
 
-            for ($i = 0; $i < $nombre_tickets; $i++)
-            {
-                $commande->addBillet($data[$i]);
-            }
+                    for ($i = 0; $i < $nombre_tickets; $i++) {
+                        $commande->addBillet($data[$i]);
+                    }
 
-            return $this->redirectToRoute('ticket_phase_3', [
-                'commande' => $commande
-            ]);
+                    return $this->redirectToRoute('ticket_phase_3', [
+                        'commande' => $commande
+                    ]);
+                }
         }
 
         return $this->render('ticket/ticket_phase2.html.twig', [
@@ -193,7 +194,4 @@ class TicketController extends AbstractController
             'title' => 'Merci de votre future visite'
         ]);
     }
-
-
-
 }

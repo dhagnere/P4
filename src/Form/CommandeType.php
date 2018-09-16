@@ -28,10 +28,10 @@ class CommandeType extends AbstractType
     {
         $builder
             ->add('mail', EmailType::class, [
-                    'label'=>'L\'email où nous vous enverrons votre (vos) billet(s) :'
+                    'label'=>'Veuillez renseigner l\'email où nous vous enverrons votre (vos) billet(s) :'
             ])
             ->add('date_visit', DateType::class, [
-                'label' => 'Date de visite (jours de fermetures Mardi, Samedi et Dimanches) :',
+                'label' => 'Date de visite souhaitée (jours de fermetures Mardi, Samedi et Dimanches) :',
                 'widget' => 'single_text',
                 'html5' => false,
                 'format' => 'd/M/y',
@@ -43,7 +43,7 @@ class CommandeType extends AbstractType
                 'label'=>'Nombre de tickets désiré :'
             ])
             ->add('halfday', ChoiceType::class, array(
-                'label'=>'Durée de la visite :',
+                'label'=>'Durée de la visite (Journée - 16 Euro , Demi journée : 8 Euro) :',
                 'choices' =>array(
                     'Journée complète'=>false,
                     'Demi-journée'=>true,
