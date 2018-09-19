@@ -58,11 +58,12 @@ body {
 #gallery a{
     display: block;
     float: left;
-    padding: 2 2px;
+    padding: 2px;
 }
 
 #gallery a img{
     border: solid 2px black;
+    height: 410px;
 }
 
 /* FIN DE GALLERIE */

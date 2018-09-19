@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 var slider  = function (id) {
-    self=this;//*on cree un carialbe intermediaire sef contenant this afin de pouvoir utiliser individuellement chaque element de l'id*//
+    let self = this;//*on cree un variable intermediaire self contenant this afin de pouvoir utiliser individuellement chaque element de l'id*//
     this.div = $(id); //*on recupere la div concernant l'element sur lequel on travaille (id = "#gallery)*//
     this.slider=this.div.find(".slider");
 
