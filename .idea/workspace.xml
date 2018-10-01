@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="671a8550-dd84-44b9-ad4b-25bceb2e7b78" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Service/CheckNbTicket.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Email.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Email.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/remerciements/email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/remerciements/email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CommandeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CommandeRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,27 +70,28 @@
     <session id="-1817554696">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="billet" value="13" />
-          <entry key="commande" value="16" />
+          <entry key="commande" value="17" />
           <entry key="console" value="1" />
           <entry key="css" value="3" />
           <entry key="env" value="4" />
           <entry key="jpeg" value="1" />
           <entry key="jpg" value="3" />
           <entry key="js" value="2" />
-          <entry key="php" value="65" />
+          <entry key="php" value="70" />
           <entry key="phpunit" value="1" />
           <entry key="png" value="6" />
           <entry key="sql" value="1" />
@@ -105,10 +103,10 @@
         <counts>
           <entry key=".env file" value="4" />
           <entry key="CSS" value="3" />
-          <entry key="Database Element" value="29" />
+          <entry key="Database Element" value="30" />
           <entry key="Image" value="10" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="66" />
+          <entry key="PHP" value="71" />
           <entry key="Scratch" value="2" />
           <entry key="Twig" value="44" />
           <entry key="YAML" value="14" />
@@ -120,7 +118,7 @@
           <entry key="dummy" value="5" />
           <entry key="env" value="48" />
           <entry key="js" value="1543" />
-          <entry key="php" value="8065" />
+          <entry key="php" value="8201" />
           <entry key="twig" value="3510" />
           <entry key="txt" value="2" />
           <entry key="yaml" value="105" />
@@ -131,7 +129,7 @@
           <entry key=".env file" value="48" />
           <entry key="CSS" value="774" />
           <entry key="JavaScript" value="1543" />
-          <entry key="PHP" value="8065" />
+          <entry key="PHP" value="8201" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="Twig" value="3510" />
           <entry key="YAML" value="105" />
@@ -146,11 +144,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TicketController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="-340">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#34#56#0#PHP" expanded="true" />
               </folding>
@@ -159,31 +157,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ticket/home.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="959">
-              <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+        <entry file="das://f20c0653-b74a-4e68-96d3-6430d71fc09e/schema/p4/table/commande">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Service/Email.php">
+        <entry file="file://$PROJECT_DIR$/src/Repository/CommandeRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="31" column="7" selection-start-line="26" selection-start-column="4" selection-end-line="31" selection-end-column="7" />
+            <state relative-caret-position="442">
+              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Commande.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2818">
+              <caret line="189" column="27" selection-start-line="189" selection-start-column="27" selection-end-line="189" selection-end-column="37" />
               <folding>
-                <element signature="e#6#87#0#PHP" expanded="true" />
+                <element signature="e#30#78#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/remerciements/email.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/Service/CheckNbTicket.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="57" column="4" lean-forward="true" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+            <state relative-caret-position="255">
+              <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+              <folding>
+                <element signature="e#114#138#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -223,6 +233,8 @@
         <option value="$PROJECT_DIR$/src/Service/Email.php" />
         <option value="$PROJECT_DIR$/templates/remerciements/email.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/TicketController.php" />
+        <option value="$PROJECT_DIR$/src/Service/CheckNbTicket.php" />
+        <option value="$PROJECT_DIR$/src/Repository/CommandeRepository.php" />
       </list>
     </option>
   </component>
@@ -333,7 +345,7 @@
       <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-48" />
     <option name="y" value="25" />
     <option name="width" value="1936" />
@@ -377,8 +389,25 @@
             <path>
               <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
               <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -393,23 +422,23 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="js.last.introduce.type" value="VAR" />
-    <property name="last_opened_file_path" value="C:/wamp/www/forteroche" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Mes sites en Dev\my-louvre\templates\remerciements" />
-      <recent name="D:\Mes sites en Dev\my-louvre\src\Service" />
-      <recent name="D:\Mes sites en Dev\my-louvre\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Mes sites en Dev\my-louvre\src\Service" />
       <recent name="D:\Mes sites en Dev\my-louvre\public\images" />
       <recent name="D:\Mes sites en Dev\my-louvre\templates\remerciements" />
       <recent name="D:\DEV\sites\P4\public\images" />
       <recent name="D:\DEV\sites\P4\templates\order" />
-      <recent name="D:\DEV\sites\P4\templates\ticket" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Mes sites en Dev\my-louvre\templates\remerciements" />
+      <recent name="D:\Mes sites en Dev\my-louvre\src\Service" />
+      <recent name="D:\Mes sites en Dev\my-louvre\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -459,14 +488,15 @@
       <workItem from="1536043680644" duration="5000" />
       <workItem from="1536043936378" duration="7141000" />
       <workItem from="1536491281186" duration="90699000" />
-      <workItem from="1537094080465" duration="12327000" />
+      <workItem from="1537094080465" duration="12703000" />
+      <workItem from="1538235225901" duration="4367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="305288000" />
+    <option name="totallyTimeSpent" value="310031000" />
   </component>
-  <component name="TodoView" selected-index="3">
+  <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -476,14 +506,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17217484" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17377399" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4989339" weight="0.35032538" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4989339" visible="true" weight="0.35032538" />
       <window_info anchor="bottom" id="Database Changes" order="2" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5010661" side_tool="true" weight="0.35032538" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.329718" />
@@ -497,7 +527,7 @@
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.329718" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.3286334" />
-      <window_info anchor="right" id="Database" order="0" weight="0.22814499" />
+      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.22814499" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -536,13 +566,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManagerInterface.php" />
     <entry file="das://f20c0653-b74a-4e68-96d3-6430d71fc09e/schema/p4/table/migration_versions">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -581,27 +604,11 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/PriceHelper.php" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_code-stripe.zip/start/src/AppBundle/Store/ShoppingCart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-772">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_code-stripe.zip/start/src/AppBundle/Store/ShoppingCart.php" />
     <entry file="file://$PROJECT_DIR$/src/Entity/Billet.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
           <caret line="152" selection-start-line="152" selection-end-line="152" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Commande.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="189" column="27" selection-start-line="189" selection-start-column="27" selection-end-line="189" selection-end-column="37" />
-          <folding>
-            <element signature="e#30#78#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -690,13 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://f20c0653-b74a-4e68-96d3-6430d71fc09e/schema/p4/table/commande">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/remerciements/thanks.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -718,9 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="48" column="118" selection-start-line="48" selection-start-column="118" selection-end-line="48" selection-end-column="118" />
-          <folding>
-            <element signature="e#111#151#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,17 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/CheckPrice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <element signature="e#113#135#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,34 +751,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="959">
+        <state relative-caret-position="1479">
           <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/remerciements/email.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/Email.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="7" selection-start-line="26" selection-start-column="4" selection-end-line="31" selection-end-column="7" />
+        <state relative-caret-position="340">
+          <caret line="20" column="81" lean-forward="true" selection-start-line="20" selection-start-column="81" selection-end-line="20" selection-end-column="81" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/remerciements/email.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Service/CheckPrice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="57" column="4" lean-forward="true" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+        <state relative-caret-position="17">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#113#135#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+        <state relative-caret-position="-340">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#34#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f20c0653-b74a-4e68-96d3-6430d71fc09e/schema/p4/table/commande">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/CheckNbTicket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+          <folding>
+            <element signature="e#114#138#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/CommandeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Commande.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2818">
+          <caret line="189" column="27" selection-start-line="189" selection-start-column="27" selection-end-line="189" selection-end-column="37" />
+          <folding>
+            <element signature="e#30#78#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

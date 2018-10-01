@@ -22,19 +22,18 @@ class CommandeRepository extends ServiceEntityRepository
 //    /**
 //     * @return Commande[] Returns an array of Commande objects
 //     */
-    /*
-    public function findByExampleField($value)
+
+    public function findNumberTicket($value)
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+            ->andWhere('c.nb_ti = :val')
             ->setParameter('val', $value)
             ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Commande
