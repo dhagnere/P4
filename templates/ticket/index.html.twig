@@ -3,10 +3,11 @@
 {% block title %} {{ title }}!{% endblock %}
 
 {% block body %}
-    <br>
-    <div class="titre-accueil">
-        <h1>CREATION DE VOTRE COMMANDE</h1>
-           <h2>Veuillez remplir les informations ci-après :</h2>
+    <body>
+        <br>
+        <div class="titre-accueil">
+            <h1>CREATION DE VOTRE COMMANDE</h1>
+               <h2>Veuillez remplir les informations ci-après :</h2>
         </div>
             <div class="formulaire-1">
             <br>
@@ -15,6 +16,8 @@
                         <button type="submit" class="button-access-billet2" >Etape suivante</button>
                 {{ form_end(formCommande) }}
             </div>
+    </body>
+
 {% endblock %}
 
 {% block javascripts %}

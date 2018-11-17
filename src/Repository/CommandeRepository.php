@@ -19,23 +19,38 @@ class CommandeRepository extends ServiceEntityRepository
         parent::__construct($registry, Commande::class);
     }
 
-//    /**
-//     * @return Commande[] Returns an array of Commande objects
-//     */
 
-    public function findNumberTicket($value)
+    public function getNbVisitors($visit)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.nb_ti = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->getQuery()
-            ->getResult()
-        ;
+        $query = $this->createQueryBuilder('t')
+            ->select('t.nb_tickets')
+            ->where('t.date_visit = :date')
+            ->setParameter('date', $visit)
+            ->getQuery();
+        $result = $query->getResult();
+
+        $nbTotal = 0;
+
+        foreach ($result as $nb) {
+            $nbTotal += $nb['nb_tickets'];
+        } var_dump ($nbTotal);
+        return ($nbTotal);
+
     }
 
 
-    /*
+
+/*    public function findNumberTicketByDate($visit)
+    {
+        return $this->createQueryBuilder('n')
+            ->select('n.nb_tickets')
+            ->andWhere('n.date_visit = :visit')
+            ->setParameter('visit' , $visit)
+            ->getQuery()
+            ->getResult();
+    }
+
+
     public function findOneBySomeField($value): ?Commande
     {
         return $this->createQueryBuilder('c')

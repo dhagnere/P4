@@ -10,10 +10,12 @@ use Doctrine\ORM\EntityManagerInterface;
 class CheckNbTicket
 
 {
-    public function countTicket(EntityManagerInterface $em)
+    public function getTotalTicket(EntityManagerInterface $em)
     {
         $repository = $em->getRepository(Commande::class);
         $ticketCount = $repository->findOneBy(array('nb_tickets'));
+
+       return($ticketCount);
     }
 
 
