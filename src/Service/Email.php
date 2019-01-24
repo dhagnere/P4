@@ -41,16 +41,12 @@ class Email
             ->setFrom('jobwow@gmail.com')
             ->setTo($commande->getMail())
             ->setBody(
-
                 $this->twig->render('remerciements/email.html.twig',
                     array(
                    'logo'=> $logo,
                    'commande' => $commande)))
             ->setContentType('text/html');
 
-
         $this->mailer->send($message);
     }
-
-
 }

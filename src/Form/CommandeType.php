@@ -33,7 +33,7 @@ class CommandeType extends AbstractType
             ->add('date_visit', DateType::class, [
                 'label' => 'Date de visite souhaitée (jours de fermetures Mardi, Samedi et Dimanches) :',
                 'widget' => 'single_text',
-                'html5' => false,
+                'html5' => true,
                 'format' => 'd/M/y',
                 'attr' => [
                     'class' => 'datepicker'

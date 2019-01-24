@@ -39,9 +39,10 @@ class BilletType extends AbstractType
                 'widget' => 'single_text',
                 'html5' => true,
                 'format' => 'd/M/y',
-                'attr' => [
+                'attgit r' => [
                     'class' => 'datepicker'
-            ]])
+                ]
+            ])
             ->add('country', CountryType::class , [
                 'label'=>'Votre pays de résidence :'
             ])

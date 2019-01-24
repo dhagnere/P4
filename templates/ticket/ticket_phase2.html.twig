@@ -38,4 +38,20 @@
 {% endblock %}
 
 {% block javascripts %}
+    <script>
+        $('.datepicker').datepicker({
+            format: "dd/mm/yy",
+            todayBtn: true,
+            clearBtn: true,
+            language: "fr",
+            daysOfWeekDisabled: "0,2",
+            autoclose: true,
+            todayHighlight: true,
+            toggleActive: true
+        });
+    </script>
+    {#End of datepicker Calendar#}
+    <script>
+        $('.dropdown-toggle').dropdown();
+    </script>
 {% endblock %}

@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Doctrine\ORM\Repository\Exception\InvalidMagicMethodCall;
+
 
 
 class TicketController extends AbstractController
@@ -83,8 +83,8 @@ class TicketController extends AbstractController
                 $visit = $commande->getDateVisit ();
 
                 $em->persist ($commande);
-                $repository = $em->getRepository (Commande::class);
 
+                $repository = $em->getRepository (Commande::class);
                     $nb_tickets_on_day = $repository->getNbVisitors($visit);
 
                         if ($nb_tickets_on_day>1000)
@@ -186,8 +186,9 @@ class TicketController extends AbstractController
                     "source" => "$token",
                     "description" => "test premiere facturation"
                 ));
-            } catch (\Stripe\Error\Card $e) {
-                $this->addFlash ('refus', 'Votre paiement à été refusé veuillez saisir un autre numéro de carte');
+            }catch (\Stripe\Error\Card $e)
+            {
+                $$this->addFlash ('refus', 'Votre paiement à été refusé veuillez saisir un autre numéro de carte');
 
                 return $this->render ('ticket/ticket_phase3.html.twig',
                     array('commande' => $commande,
@@ -196,6 +197,7 @@ class TicketController extends AbstractController
 
             $email->sendMail ($commande);
             $this->addFlash ('Success', 'Votre commande est bien enregistrée');
+
 
             return $this->redirectToRoute ('Merci');
 
@@ -220,8 +222,10 @@ class TicketController extends AbstractController
         $mail = $commande->getMail ();
 
 
+
+
         return $this->render ('remerciements/thanks.html.twig', [
-            'title' => 'Merci de votre future visite'
+            'title' => 'Merci pour votre future visite'
         ]);
     }
 }

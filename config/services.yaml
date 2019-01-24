@@ -4,7 +4,6 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: 'fr'
     stripe_secret_key: sk_test_mYNDATY5kBxjDkF50YTdMV2X
     stripe_public_key: pk_test_tIAsd6EKR8yWR2t2OTQT2YXp
 
