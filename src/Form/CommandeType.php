@@ -37,8 +37,7 @@ class CommandeType extends AbstractType
                 'format' => 'd/M/y',
                 'attr' => [
                     'class' => 'datepicker'
-                ]
-            ])
+                ]])
             ->add('nb_tickets', IntegerType::class , [
                 'label'=>'Nombre de tickets désiré :'
             ])

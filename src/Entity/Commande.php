@@ -5,21 +5,25 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use App\Validator\Constraints as AcmeAssert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommandeRepository")
+ * @AcmeAssert\visitDays()
  */
 class Commande
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Ce champ ne peux être vide !")
      */
     private $mail;
 

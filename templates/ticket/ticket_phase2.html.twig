@@ -9,49 +9,25 @@
             </div>
         {% endfor %}
         <div class="fa-2x">
-            <br>
             <div class="titre-accueil">
             <h2>CREATION DE VOTRE COMMANDE ETAPE 2</h2>
-            <br>
-            <br><br>
-        </div>
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <h3>Veuillez remplir les informations ci-après :</h3>
+            </div>
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <h3>Veuillez remplir les informations ci-après :</h3>
 
-                            {{  form_start(formBillet) }}
-                            {{ form_errors(formBillet) }}
-                            {{ form_widget(formBillet) }}
-                            <button type="submit" class="btn btn-default" >Etape suivante</button>
-                            {{ form_end(formBillet) }}
+                                {{  form_start(formBillet) }}
+                                {{ form_errors(formBillet) }}
+                                {{ form_widget(formBillet) }}
+                                <button type="submit" class="button-access-billet2" >Etape suivante</button>
+                                {{ form_end(formBillet) }}
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            <br><br>
-
-                 <br>
-</div>
+            <br>
+        </div>
 </body>
-{% endblock %}
-
-{% block javascripts %}
-    <script>
-        $('.datepicker').datepicker({
-            format: "dd/mm/yy",
-            todayBtn: true,
-            clearBtn: true,
-            language: "fr",
-            daysOfWeekDisabled: "0,2",
-            autoclose: true,
-            todayHighlight: true,
-            toggleActive: true
-        });
-    </script>
-    {#End of datepicker Calendar#}
-    <script>
-        $('.dropdown-toggle').dropdown();
-    </script>
 {% endblock %}

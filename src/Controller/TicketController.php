@@ -161,7 +161,14 @@ class TicketController extends AbstractController
 
     /**
      * @Route("/ticket3", name="ticket_phase_3")
+     * @param Request $request
+     * @param CheckPrice $checkPrice
+     * @param EntityManagerInterface $em
+     * @param Email $email
      * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
      */
 
     public function showOrder(Request $request, CheckPrice $checkPrice, EntityManagerInterface $em, Email $email)

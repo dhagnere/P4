@@ -2,14 +2,11 @@
 
 {% block body %}
     <br>
-    <br>
-
     <div class="titre-accueil">
         <h1>{{ title|upper }}</h1>
     </div>
-
-    <hr>
-
+    <br>
+    <br>
     <div class="img-accueil">
         <img class="d-block w-100" src="{{ asset("images/louvre.jpg") }}" alt="First slide">
     </div>
@@ -25,47 +22,60 @@
             <div class="col-md-4 link1-2-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h5><i class="fa fa-fw fa-check"></i> {{ "Se rendre au musée"|trans}}</h5>
+                        <h5><i class="fa fa-fw fa-check"></i> {{ "Se rendre au musée"|trans|upper}}</h5>
                     </div>
+                    <br>
                     <div class="panel-body">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">{{ "En savoir plus"|trans}}</a>
+                        <div class="button-access-billet">
+                        <p><a href="#" class="btn btn-info">{{ "Pour en savoir plus, c'est ici."|trans}}</a></p><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 id="activity"><i class="fa fa-fw fa-check"></i> {{ 'Les expositions en cours'|trans|upper}}</h5>
+                    </div>
+                    <br>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <div class="button-access-billet">
+                        <p><a href="#" class="btn btn-info">{{ "Liste des expositions en cours"|trans}}</a></p>
+                        </div>
+                        <br>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h5 id="activity"><i class="fa fa-fw fa-check"></i> {{ 'Les expositions en cours'|trans}}</h5>
+                        <h5 id="expo"><i class="fa fa-fw fa-check"></i> {{ "Les activités du musée"|trans|upper}}</h5>
                     </div>
+                    <br>
                     <div class="panel-body">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">{{ "En savoir plus"|trans}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5 id="expo"><i class="fa fa-fw fa-check"></i> {{ "Les activités du musée"|trans}}</h5>
-                    </div>
-                    <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">{{ "En savoir plus"|trans}}</a>
-                    </div>
+                        <div class="button-access-billet">
+                        <a href="#" class="btn btn-info">{{ "Nos différentes activités"|trans}}</a>
+                        </div>
                 </div>
             </div>
         </div>
     </div>
+    <br><br>
     <div class="row">
         <div id="gallery">
             <div class="slider">

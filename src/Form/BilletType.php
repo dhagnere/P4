@@ -39,7 +39,7 @@ class BilletType extends AbstractType
                 'widget' => 'single_text',
                 'html5' => true,
                 'format' => 'd/M/y',
-                'attgit r' => [
+                'attr' => [
                     'class' => 'datepicker'
                 ]
             ])
