@@ -19,8 +19,6 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class TicketController extends AbstractController
 {
-    //TODO VERIFIER + 14H -->OBLIGATION BILLET 1/2 JOURNEE
-    //TODO VALIDATOR POUR NB BILLETS (voir fonction ASSERT)
 
     /**
      * @param Request $request

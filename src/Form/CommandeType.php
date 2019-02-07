@@ -31,7 +31,7 @@ class CommandeType extends AbstractType
                     'label'=>'Veuillez renseigner l\'email où nous vous enverrons votre (vos) billet(s) :'
             ])
             ->add('date_visit', DateType::class, [
-                'label' => 'Date de visite souhaitée (jours de fermetures Mardi, Samedi et Dimanches) :',
+                'label' => 'Date de visite souhaitée (jours de fermetures Mardi et Dimanches) :',
                 'widget' => 'single_text',
                 'html5' => true,
                 'format' => 'd/M/y',

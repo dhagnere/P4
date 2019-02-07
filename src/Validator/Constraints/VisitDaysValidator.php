@@ -8,19 +8,12 @@
 
 namespace App\Validator\Constraints;
 
-use Doctrine\ORM\EntityManagerInterface;
+
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
 class VisitDaysValidator extends ConstraintValidator
 {
-//    private $em;
-//
-//    public function __construct(EntityManagerInterface $em)
-//    {
-//        $this->em = $em;
-//    }
-
     public function validate ($value, Constraint $constraint)
     {
         $today = new \DateTime();

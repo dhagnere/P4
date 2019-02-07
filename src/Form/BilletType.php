@@ -47,7 +47,7 @@ class BilletType extends AbstractType
                 'label'=>'Votre pays de résidence :'
             ])
             ->add('discount', ChoiceType::class, array(
-                'label'=>'Etre vous sujet à une remise de prix (selon les conditions reprisent aux mentions légales ?)',
+                'label'=>'Etre vous sujet à une remise de prix (étudiant,  employé du musée, d’un service du Ministère de la Culture, militaire )',
                 'choices' =>array(
                     'Non'=>false,
                     'Oui'=>true,
