@@ -10,7 +10,7 @@ use App\Validator\Constraints as AcmeAssert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommandeRepository")
- * @AcmeAssert\visitDays()
+ * @AcmeAssert\VisitDays()
  */
 class Commande
 {

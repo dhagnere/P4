@@ -6,7 +6,7 @@
  * Time: 15:18
  */
 
-namespace App\Tests\Entity;
+namespace App\tests\Entity;
 
 use App\Entity\Commande;
 use PHPUnit\Framework\TestCase;
@@ -30,7 +30,5 @@ class CommandeTest extends TestCase
         $this->assertEquals('28/12/2019', $commande->getDateVisit()->format('d/m/Y'));
         $this->assertEquals(3, $commande->getNbTickets());
         $this->assertEquals(0, $commande->getHalfday());
-
-
     }
 }
