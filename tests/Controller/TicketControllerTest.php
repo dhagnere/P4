@@ -21,7 +21,7 @@ class TicketControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertContains('Bienvenue au Musée du Louvre', $crawler->filter('.container h1')->text());
+        $this->assertContains('BIENVENUE AU MUSÉE DU LOUVRE', $crawler->filter('.container h1')->text());
     }
 
 }
