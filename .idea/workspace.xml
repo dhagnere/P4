@@ -7,16 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="671a8550-dd84-44b9-ad4b-25bceb2e7b78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/my-louvre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/my-louvre.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Entity/BilletTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/phpunit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Controller/TicketControllerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Entity/CommandeTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TicketController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,17 +54,17 @@
     <session id="-1817554696">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.28" value="2" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.9" value="1" />
           <entry key="project.open.time.94" value="1" />
           <entry key="project.open.time.95" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -81,7 +74,7 @@
           <entry key="dummy" value="7" />
           <entry key="env" value="27" />
           <entry key="json" value="1" />
-          <entry key="php" value="829" />
+          <entry key="php" value="1210" />
           <entry key="twig" value="645" />
           <entry key="xml" value="4" />
         </counts>
@@ -91,7 +84,7 @@
           <entry key=".env file" value="27" />
           <entry key="CSS" value="10" />
           <entry key="JSON" value="1" />
-          <entry key="PHP" value="829" />
+          <entry key="PHP" value="1210" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="Twig" value="645" />
           <entry key="XML" value="5" />
@@ -105,16 +98,17 @@
           <entry key="css" value="2" />
           <entry key="dist" value="5" />
           <entry key="env" value="5" />
+          <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
-          <entry key="js" value="2" />
+          <entry key="js" value="3" />
           <entry key="json" value="6" />
           <entry key="lock" value="6" />
-          <entry key="php" value="50" />
+          <entry key="php" value="62" />
           <entry key="phpunit" value="4" />
           <entry key="test" value="1" />
           <entry key="twig" value="13" />
           <entry key="xml" value="4" />
-          <entry key="yaml" value="2" />
+          <entry key="yaml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -123,18 +117,18 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="3" />
           <entry key="JSON" value="10" />
-          <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="53" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="JavaScript" value="3" />
+          <entry key="PHP" value="65" />
+          <entry key="PLAIN_TEXT" value="6" />
           <entry key="Twig" value="13" />
           <entry key="UML" value="1" />
           <entry key="XML" value="6" />
-          <entry key="YAML" value="2" />
+          <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="6" />
+          <entry key="PHP Class.type" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions">
@@ -146,34 +140,47 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Entity/CommandeTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-              <folding>
-                <element signature="e#118#142#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-940">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/Entity/BilletTest.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="425">
+                  <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#119#141#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/config/packages/swiftmailer.yaml">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/config/packages/test/swiftmailer.yaml">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Entity/Billet.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="731">
+                  <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -205,10 +212,8 @@
         <option value="$PROJECT_DIR$/templates/ticket/home.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Validator/Constraints/visitDays.php" />
-        <option value="$PROJECT_DIR$/src/Validator/Constraints/VisitDaysValidator.php" />
         <option value="$PROJECT_DIR$/src/Form/CommandeType.php" />
         <option value="$PROJECT_DIR$/src/Form/BilletType.php" />
-        <option value="$PROJECT_DIR$/tests/Entity/BilletTest.php" />
         <option value="$PROJECT_DIR$/Tests/Entity/CommandeTest.php" />
         <option value="$PROJECT_DIR$/src/Validator/Constraints/VisitDaysvalidator.php" />
         <option value="$PROJECT_DIR$/templates/remerciements/email.html.twig" />
@@ -218,11 +223,14 @@
         <option value="$PROJECT_DIR$/src/Entity/Commande.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Validator/Constraints/VisitDays.php" />
-        <option value="$PROJECT_DIR$/tests/Controller/TicketControllerTest.php" />
         <option value="$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/phpunit.xml" />
-        <option value="$PROJECT_DIR$/src/Controller/TicketController.php" />
         <option value="$PROJECT_DIR$/tests/Entity/CommandeTest.php" />
         <option value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge/phpunit.xml.dist" />
+        <option value="$PROJECT_DIR$/tests/Controller/TicketControllerTest.php" />
+        <option value="$PROJECT_DIR$/tests/Entity/BilletTest.php" />
+        <option value="$PROJECT_DIR$/src/Validator/Constraints/VisitDaysValidator.php" />
+        <option value="$PROJECT_DIR$/src/Controller/TicketController.php" />
+        <option value="$PROJECT_DIR$/tests/Repository/BilletRepositoryTest.php" />
       </list>
     </option>
   </component>
@@ -338,10 +346,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-48" />
-    <option name="y" value="183" />
+    <option name="x" value="-159" />
+    <option name="y" value="-12" />
     <option name="width" value="1932" />
-    <option name="height" value="1058" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -365,6 +373,35 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Tests'; set:Tests; class com.intellij.psi.search.scope.TestsScope">
           <expand>
@@ -385,33 +422,6 @@
             <path>
               <item name="my-louvre" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-louvre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my-louvre" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -528,20 +538,12 @@
       <workItem from="1549548396375" duration="13804000" />
       <workItem from="1550277238352" duration="3138000" />
       <workItem from="1550312428579" duration="4017000" />
-      <workItem from="1550424147114" duration="14345000" />
+      <workItem from="1550424147114" duration="23178000" />
+      <workItem from="1551890701983" duration="3080000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CommandeTest - 2019.02.17 at 22h 49m 42s.xml">
-      <configuration name="CommandeTest" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="CommandeTest - 2019.02.17 at 22h 50m 47s.xml">
-      <configuration name="CommandeTest" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="CommandeTest - 2019.02.17 at 22h 50m 57s.xml">
-      <configuration name="CommandeTest" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="CommandeTest - 2019.02.17 at 22h 51m 52s.xml">
       <configuration name="CommandeTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -563,9 +565,18 @@
     <history-entry file="CommandeTest - 2019.02.18 at 23h 45m 16s.xml">
       <configuration name="CommandeTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="CommandeTest - 2019.02.18 at 23h 53m 50s.xml">
+      <configuration name="CommandeTest" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="CommandeTest - 2019.02.18 at 23h 53m 54s.xml">
+      <configuration name="CommandeTest" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="CommandeTest - 2019.02.22 at 11h 01m 37s.xml">
+      <configuration name="CommandeTest" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="428736000" />
+    <option name="totallyTimeSpent" value="440649000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -578,12 +589,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.8503401" visible="true" weight="0.1716418" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.8503401" visible="true" weight="0.17324094" />
       <window_info id="Structure" order="2" sideWeight="0.14945652" side_tool="true" weight="0.1716418" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.4989339" visible="true" weight="0.31561822" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4989339" visible="true" weight="0.39262474" />
       <window_info anchor="bottom" id="Database Changes" order="2" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50159913" side_tool="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49946696" weight="0.3286334" />
@@ -597,11 +609,11 @@
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.324295" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.3286334" />
-      <window_info anchor="right" id="Coverage" side_tool="true" />
       <window_info anchor="right" id="Database" order="0" weight="0.22761194" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -661,47 +673,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_bootstrap-datepicker_1.8.0_js_bootstrap-datepicker.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_bootstrap-datepicker_1.8.0_locales_bootstrap-datepicker.fr.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ticket/ticket_phase2.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/CheckPrice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/CommandeType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="80" selection-start-line="33" selection-start-column="80" selection-end-line="33" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/BilletType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="49" column="143" selection-start-line="49" selection-start-column="143" selection-end-line="49" selection-end-column="143" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ticket/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -723,17 +694,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Entity/BilletTest.php" />
     <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-714" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Billet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/remerciements/email.html.twig">
@@ -782,27 +745,10 @@
     <entry file="file://$PROJECT_DIR$/bin/.phpunit/phpunit-6.5/tests/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validator/Constraints/VisitDaysValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-          <folding>
-            <element signature="e#128#171#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Commande.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validator/Constraints/VisitDays.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -823,24 +769,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
-          <folding>
-            <element signature="e#23#82#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test Results - my-louvre.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1632" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/ide-phpunit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="252" selection-start-line="252" selection-end-line="252" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Test Results - my-louvre.html" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/ide-phpunit.php" />
     <entry file="uml://PHP/D:/Mes sites en Dev/my-louvre">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -858,17 +791,11 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="123.0" y="-95.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="123.0" y="-95.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TicketController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -892,23 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Controller/TicketControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Entity/CommandeTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding>
-            <element signature="e#118#142#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/symfony.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1071" />
@@ -918,13 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-940">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -949,7 +852,111 @@
         <state relative-caret-position="-826" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/slider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="77" lean-forward="true" selection-start-line="23" selection-start-column="77" selection-end-line="23" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Controller/TicketControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/BilletType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="49" column="143" selection-start-line="49" selection-start-column="143" selection-end-line="49" selection-end-column="143" />
+          <folding>
+            <element signature="e#111#151#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TicketController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Billet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validator/Constraints/VisitDays.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Repository/BilletRepositoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+          <folding>
+            <element signature="e#122#144#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/BilletRepository.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Entity/CommandeTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="e#118#142#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validator/Constraints/VisitDaysValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="937">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="49" />
+          <folding>
+            <element signature="e#128#171#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Entity/BilletTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding>
+            <element signature="e#119#141#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/swiftmailer.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/test/swiftmailer.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>

@@ -19,13 +19,15 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class TicketController extends AbstractController
 {
-
+    //Acceuil du site//
     /**
      * @param Request $request
      * @param SessionInterface $session
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/" , name="home")
      */
+
+
     public function home(Request $request, SessionInterface $session)
     {
 
@@ -34,6 +36,8 @@ class TicketController extends AbstractController
             'title' => 'Bienvenue au Musée du Louvre'
         ]);
     }
+
+
 
     /**
      * @Route("/reservation_impossible" , name="reservation_impossible")
